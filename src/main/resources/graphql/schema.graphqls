@@ -1,0 +1,24 @@
+type Event{
+    id: ID
+    title: String
+    status: String
+}
+
+type Message{
+    id:ID
+    sender:String
+    content:String
+    timeStamp:String
+}
+
+type Query{
+    getEvents: [Event]
+    getMessages(eventId: ID!): [Message]
+}
+
+type Mutation{
+    createEvent(title:String!):Event
+    joinEvent(eventId:ID!,user:String!):String
+}
+
+
